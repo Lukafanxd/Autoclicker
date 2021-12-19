@@ -39,7 +39,7 @@ void clicker::run()
 
     while (true)
     {
-        if (settings::leftClickerEnabled && (GetAsyncKeyState(VK_LBUTTON)))
+        if (settings::leftClickerEnabled && (GetAsyncKeyState(VK_BACK)))
         {
             clicker::click();
         }
