@@ -39,7 +39,7 @@ void clicker::run()
 
     while (true)
     {
-        if (settings::leftClickerEnabled && (GetAsyncKeyState(VK_LBUTTON)))
+        if (settings::leftClickerEnabled && (GetAsyncKeyState(VK_BACK)))
         {
             clicker::click();
         }
@@ -61,12 +61,12 @@ void clicker::click()
 
     POINT p;
     GetCursorPos(&p);
-    SendMessage((HWND)clicker::mcWindow, WM_LBUTTONDOWN, MK_LBUTTON, MAKELPARAM(p.x, p.y));
+    SendMessage((HWND)clicker::mcWindow, WM_BACKDOWN, MK_BACk, MAKELPARAM(p.x, p.y));
 
     Sleep(delay2 / 1000);
 
     GetCursorPos(&p);
-    SendMessage((HWND)clicker::mcWindow, WM_LBUTTONUP, MK_LBUTTON, MAKELPARAM(p.x, p.y));
+    SendMessage((HWND)clicker::mcWindow, WM_BACK, MK_BACK, MAKELPARAM(p.x, p.y));
 
     Sleep(1000 / (delay + delay2));
 }
